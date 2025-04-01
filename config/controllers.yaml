@@ -1,0 +1,23 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+LeFro_joint_velocity_controller:
+  type: effort_controllers/JointVelocityController
+  joint: LeFro
+  pid: {p: 10.0, i: 0.0, d: 0.0}
+
+LeBa_joint_velocity_controller:
+  type: effort_controllers/JointVelocityController
+  joint: LeBa
+  pid: {p: 100.0, i: 0.01, d: 10.0}
+
+RiFro_joint_velocity_controller:
+  type: effort_controllers/JointVelocityController
+  joint: RiFro
+  pid: {p: 10.0, i: 0.0, d: 0.0}
+
+RiBa_joint_velocity_controller:
+  type: effort_controllers/JointVelocityController
+  joint: RiBa
+  pid: {p: 100.0, i: 0.01, d: 10.0}

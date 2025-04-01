@@ -1,0 +1,45 @@
+# Controller cho khớp quay link1_rot
+link1_rot_position_controller:
+  type: position_controllers/JointPositionController
+  joint: link1_rot
+  pid: {p: 20.0, i: 0.1, d: 0.01}
+
+# Controller cho khớp tịnh tiến link2_pris
+link2_pris_position_controller:
+  type: position_controllers/JointPositionController
+  joint: link2_pris
+  pid: {p: 20.0, i: 0.1, d: 0.01}
+
+# Controller tổng hợp cho cả hai khớp
+arm_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - link1_rot
+    - link2_pris
+  gains:
+    link1_rot: {p: 100.0, i: 0.01, d: 10.0}
+    link2_pris: {p: 100.0, i: 0.01, d: 10.0}
+  constraints:
+    goal_time: 0.6
+    stopped_velocity_tolerance: 0.01
+    link1_rot: {trajectory: 0.05, goal: 0.02}
+    link2_pris: {trajectory: 0.05, goal: 0.02}
+  state_publish_rate: 50
+  action_monitor_rate: 10
+
+# Joint State Controller
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+# PID Gains cho link1_rot và link2_pris
+gazebo_ros_control:
+  pid_gains:
+    link1_rot:
+      p: 100.0
+      i: 0.01
+      d: 10.0
+    link2_pris:
+      p: 100.0
+      i: 0.01
+      d: 10.0

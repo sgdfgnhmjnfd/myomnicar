@@ -1,0 +1,73 @@
+<launch>
+  <!-- Sử dụng thời gian mô phỏng -->
+  <param name="/use_sim_time" value="false" />
+
+  <!-- Load robot description -->
+  <param name="robot_description" textfile="$(find myomnicar)/urdf/myomnicar.urdf" />
+  <!-- Thêm tham số cấu hình RViz -->
+  <arg name="rvizconfig" default="$(find myomnicar)/config/config_sensors.rviz" />
+  <!-- Load controller configuration -->
+  <rosparam file="$(find myomnicar)/config/arm_control.yaml" command="load" />
+
+  <!-- Joint State Publisher -->
+  <node
+    name="joint_state_publisher_gui"
+    pkg="joint_state_publisher_gui"
+    type="joint_state_publisher_gui" />
+
+  <!-- Robot State Publisher -->
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+
+  <!-- RViz -->
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find myomnicar)/config_sensors.rviz" />
+
+  <!-- Khởi chạy Gazebo với một thế giới trống -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+
+  <!-- Spawn robot model vào Gazebo -->
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find myomnicar)/urdf/myomnicar.urdf -urdf -model myomnicar"
+    output="screen" />
+
+  <!-- Camera View -->
+  <node name="camera_view" pkg="rqt_image_view" type="rqt_image_view"
+        args="/rrbot/camera1/image_raw" />
+
+  <!-- Start controller manager -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner"
+        args="joint_state_controller arm_controller"
+        respawn="false" required="true" output="screen" />
+
+  <!-- NavSat Transform Node -->
+  <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform" output="screen">
+    <!-- Parameters -->
+    <param name="use_odometry" value="false" />
+    <param name="wait_for_datum" value="false" />
+    <param name="zero_altitude" value="true" />
+    <param name="broadcast_cartesian_transform" value="true" />
+    <param name="magnetic_declination_radians" value="0.0" />
+    <param name="joint2_limit" value="[-0.5, 0.5]" />
+
+    <!-- Input topics -->
+    <remap from="gps/fix" to="/gps/fix" />
+    <remap from="odometry/filtered" to="/odometry/filtered" />
+
+    <!-- Output topics -->
+    <remap from="odometry/gps" to="/odometry/gps" />
+
+    <!-- TF Frames -->
+    <param name="world_frame" value="map" />
+    <param name="utm_frame" value="utm" />
+    <param name="base_link_frame" value="base_link" />
+  </node>
+</launch>

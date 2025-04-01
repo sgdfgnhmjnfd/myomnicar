@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="myomnicar">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.00273560199532746 0.000215777050725841 0.0274996215758712" rpy="0 0 0" />
+      <mass value="3.41696225402213" />
+      <inertia ixx="0.0201386605420202" ixy="-2.59546498906369E-08" ixz="-3.24604634721351E-19" iyy="0.0598794922115422" iyz="4.68559932695745E-18" izz="0.0795237108247995" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://myomnicar/meshes/base_link.STL" />
+      </geometry>
+      <material name="pastel_blue">
+        <color rgba="0.7 0.9 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://myomnicar/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="LeFro_Link">
+    <inertial>
+      <origin
+        xyz="-1.81709194103929E-05 -0.0214523571382038 -4.57468686205931E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.132528370371145" />
+      <inertia
+        ixx="2.83256300698726E-05"
+        ixy="-2.6042099748649E-08"
+        ixz="-2.95923115088678E-08"
+        iyy="3.4560591476919E-05"
+        iyz="6.15936825764087E-08"
+        izz="2.83831082567257E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myomnicar/meshes/LeFro_Link.STL" />
+      </geometry>
+      <material
+        name="pastel_white">
+        <color
+          rgba="0.95 0.95 0.95 1" /> <!-- Màu trắng pastel -->
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myomnicar/meshes/LeFro_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LeFro"
+    type="continuous">
+    <origin
+      xyz="0.110668877027778 0.18115 0.0151011526523603"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="LeFro_Link" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="LeBa_Link">
+    <inertial>
+      <origin xyz="-2.68492397923203E-05 -0.0214523571382685 -4.1256231420558E-05" rpy="0 0 0" />
+      <mass value="0.132528370370294" />
+      <inertia
+        ixx="2.83164123919334E-05"
+        ixy="-1.33624421854789E-08"
+        ixz="-1.61531394694566E-08"
+        iyy="3.45605914767988E-05"
+        iyz="6.55241775498633E-08"
+        izz="2.83923259343786E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myomnicar/meshes/LeBa_Link.STL" />
+      </geometry>
+      <material
+        name="pastel_blue">
+        <color
+          rgba="0.7 0.9 1 1" /> <!-- Màu xanh pastel -->
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myomnicar/meshes/LeBa_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LeBa" type="continuous">
+    <origin xyz="-0.125330885687265 0.18115 0.0151012262096693" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="LeBa_Link" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  <link
+    name="RiFro_Link">
+    <inertial>
+      <origin
+        xyz="3.92548868873022E-05 0.0214523571383656 -2.96986897965869E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.132528370369018" />
+      <inertia
+        ixx="2.83148407571523E-05"
+        ixy="9.66293486936121E-09"
+        ixz="-1.17959965738313E-08"
+        iyy="3.4560591476685E-05"
+        iyz="-6.61709937415014E-08"
+        izz="2.83938975688269E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myomnicar/meshes/RiFro_Link.STL" />
+      </geometry>
+      <material
+        name="pastel_white">
+        <color
+          rgba="0.95 0.95 0.95 1" /> <!-- Màu trắng pastel -->
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myomnicar/meshes/RiFro_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RiFro"
+    type="continuous">
+    <origin
+      xyz="0.108669183570457 -0.18035 0.0151012383185798"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RiFro_Link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="RiBa_Link">
+    <inertial>
+      <origin
+        xyz="4.59371360957972E-05 0.0214523571381263 -1.7684394919293E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.1325283703723" />
+      <inertia
+        ixx="2.83271570527136E-05"
+        ixy="2.75857869753165E-08"
+        ixz="-3.10022805566532E-08"
+        iyy="3.45605914771984E-05"
+        iyz="-6.0917953138025E-08"
+        izz="2.83815812743568E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myomnicar/meshes/RiBa_Link.STL" />
+      </geometry>
+      <material
+        name="pastel_blue">
+        <color
+          rgba="0.7 0.9 1 1" /> <!-- Màu xanh pastel -->
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myomnicar/meshes/RiBa_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RiBa" type="continuous">
+    <origin xyz="-0.127331151836851 -0.18115 0.0151011400172413" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="RiBa_Link" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link
+    name="link1_rot_Link">
+    <inertial>
+      <origin
+        xyz="-0.00156583601300483 -0.0966182406039711 1.11022302462516E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.346018379151474" />
+      <inertia
+        ixx="0.00106994053875397"
+        ixy="6.60132552132075E-06"
+        ixz="6.5982858102915E-22"
+        iyy="0.000115495298943018"
+        iyz="-3.67584944163676E-19"
+        izz="0.00113274323114465" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myomnicar/meshes/link1_rot_Link.STL" />
+      </geometry>
+      <material
+        name="pastel_white">
+        <color
+          rgba="0.95 0.95 0.95 1" /> <!-- Màu trắng pastel -->
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myomnicar/meshes/link1_rot_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="link1_rot" type="revolute">
+    <origin xyz="0.016669 0 0.1125" rpy="-1.5708 0 0" />
+    <parent link="base_link" />
+    <child link="link1_rot_Link" />
+    <axis xyz="0 0 -1" />
+    <limit lower="-1.57" upper="1.57" effort="100.0" velocity="1.0" />
+    <gazebo>
+      <plugin name="link1_rot_effort" filename="libgazebo_ros_control.so">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </plugin>
+    </gazebo>
+  </joint>
+  <link
+    name="link2_pris_Link">
+    <inertial>
+      <origin
+        xyz="0 1.11022302462516E-16 -0.121034103089346"
+        rpy="0 0 0" />
+      <mass
+        value="0.0433707949799023" />
+      <inertia
+        ixx="0.000299177750845828"
+        ixy="2.77374969410811E-24"
+        ixz="1.17118665016213E-21"
+        iyy="0.000299064261379515"
+        iyz="1.36894779473764E-20"
+        izz="1.28641256701598E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myomnicar/meshes/link2_pris_Link.STL" />
+      </geometry>
+      <material
+        name="pastel_blue">
+        <color
+          rgba="0.7 0.9 1 1" /> <!-- Màu xanh pastel -->
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://myomnicar/meshes/link2_pris_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link2_pris"
+    type="prismatic">
+    <origin
+      xyz="0.026425 -0.38 0"
+      rpy="-1.5708 0 -3.1416" />
+    <parent
+      link="link1_rot_Link" />
+    <child
+      link="link2_pris_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-0.5"
+      upper="0.5"
+      effort="100.0"
+      velocity="1.0" />
+    <gazebo>
+      <plugin name="link2_pris_effort" filename="libgazebo_ros_control.so">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </plugin>
+    </gazebo>
+  </joint>
+  <link name="camera_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.1" />
+      <inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.03 0.03 0.03" />
+      </geometry>
+      <material name="pastel_white">
+        <color rgba="0.95 0.95 0.95 1" /> <!-- Màu trắng pastel -->
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.03 0.03 0.03" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0.22755 0.001 0.075" rpy="0 0 0"/>
+    <parent link="base_link" />
+    <child link="camera_link" />
+  </joint>
+
+  <gazebo reference="camera_link">
+    <sensor type="camera" name="camera_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <update_rate>30</update_rate>
+      <camera>
+        <horizontal_fov>1.396</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>100</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>30.0</updateRate>
+        <cameraName>front_camera</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+<link name="gps_link">
+  <visual>
+    <geometry>
+      <sphere radius="0.02"/>
+    </geometry>
+    <material name="pastel_blue">
+      <color rgba="0.7 0.9 1 1"/> <!-- Màu xanh pastel -->
+    </material>
+  </visual>
+</link>
+
+<joint name="gps_joint" type="fixed">
+  <origin xyz="0 0 0.04" rpy="0 0 0"/>  
+  <parent link="base_link"/> <!-- Gắn GPS vào base_link -->
+  <child link="gps_link"/>
+</joint>
+
+  <joint name="rplidar_joint" type="fixed">
+		<axis xyz="0 1 0" />
+		<origin xyz="0.25 0.001 0.005" rpy="0 0 0"/>
+		<parent link="base_link"/>
+		<child link="laser"/>
+	</joint>
+
+	<!-- rplidar Laser -->
+	<link name="laser">
+		<collision>
+			<origin xyz="0 0 0" rpy="1.5707 0 3.1412"/>
+			<geometry>
+				<mesh filename="package://omni_gazebo/meshes/rplidar.dae" scale="0.001 0.001 0.001" />
+			</geometry>
+		</collision>
+
+		<visual>
+			<origin xyz="0 0 0" rpy="1.5707 0 4.71"/>
+			<geometry>
+				<mesh filename="package://omni_gazebo/meshes/rplidar.dae" scale="0.001 0.001 0.001" />
+			</geometry>
+      <material name="pastel_white">
+        <color rgba="0.95 0.95 0.95 1" /> <!-- Màu trắng pastel -->
+      </material>
+		</visual>
+
+		<inertial>
+			<mass value="0.00001" />
+			<origin xyz="0 0 0.058" rpy="1.5707 0 4.71"/>
+			<inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+		</inertial>
+	</link>
+
+  <!-- RpLidar using CPU -->
+   <gazebo reference="laser">
+    <material>Gazebo/Black</material>
+    <sensor type="ray" name="head_rplidar_sensor">
+      <visualize>true</visualize>
+      <update_rate>30.0</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>60</samples>
+            <resolution>1</resolution>
+            <min_angle>-1.570796</min_angle>
+            <max_angle>1.570796</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.1</min>
+          <max>12.0</max>
+          <resolution>0.02</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_head_rplidar_controller" filename="libgazebo_ros_laser.so">
+        <topicName>scan</topicName>
+        <frameName>laser</frameName>
+      </plugin>
+    </sensor>
+  </gazebo> 
+  <gazebo>
+  <!-- Bắt đầu khai báo cấu hình cho Gazebo -->
+  <plugin name="gps_plugin" filename="libhector_gazebo_ros_gps.so">
+    <!-- Khai báo plugin GPS sử dụng thư viện "libhector_gazebo_ros_gps.so" -->
+    
+    <alwaysOn>true</alwaysOn>
+    <!-- Luôn kích hoạt plugin GPS, ngay cả khi không có client nào subscribe -->
+
+    <updateRate>10.0</updateRate>
+    <!-- Tần suất cập nhật dữ liệu GPS là 10 Hz (10 lần/giây) -->
+
+    <bodyName>base_link</bodyName>
+    <!-- Xác định liên kết (link) mà cảm biến GPS gắn vào (ở đây là "base_link") -->
+    
+    <topicName>/gps/fix</topicName>
+    <!-- Tên topic ROS xuất ra dữ liệu vị trí GPS (kiểu sensor_msgs/NavSatFix) -->
+
+    <velocityTopicName>/gps/fix_velocity</velocityTopicName>
+    <!-- Tên topic ROS xuất ra dữ liệu vận tốc (kiểu geometry_msgs/Vector3Stamped) -->
+    
+    <referenceLatitude>21.028511</referenceLatitude>
+    <!-- Giá trị vĩ độ gốc (ở đây là 21.028511 - tọa độ ở Hà Nội, Việt Nam) -->
+    
+    <referenceLongitude>105.804817</referenceLongitude>
+    <!-- Giá trị kinh độ gốc (ở đây là 105.804817 - tọa độ ở Hà Nội, Việt Nam) -->
+
+    <referenceAltitude>10.0</referenceAltitude>
+    <!-- Độ cao gốc so với mực nước biển (10 mét) -->
+
+    <drift>0.001 0.001 0.001</drift>
+    <!-- Mô phỏng độ lệch (trôi) của tín hiệu GPS theo các trục X, Y, Z (đơn vị: mét) -->
+
+    <gaussianNoise>0.05 0.05 0.05</gaussianNoise>
+    <!-- Mô phỏng nhiễu Gauss (ngẫu nhiên) trên các trục X, Y, Z (đơn vị: mét) -->
+  </plugin>
+  <!-- Kết thúc khai báo plugin GPS -->
+</gazebo>
+<!-- Kết thúc phần cấu hình cho Gazebo -->
+<gazebo>
+  <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+    <robotNamespace>/</robotNamespace>
+    <updateRate>50.0</updateRate> <!-- Tần suất cập nhật -->
+    <leftJoint>LeFro</leftJoint>
+    <leftJoint>LeBa</leftJoint> <!-- Joint bánh xe sau bên trái -->
+    <rightJoint>RiFro</rightJoint>
+    <rightJoint>RiBa</rightJoint> <!-- Joint bánh xe sau bên phải -->
+    <wheelSeparation>0.3623</wheelSeparation>
+    <wheelDiameter>0.1</wheelDiameter>
+    <cmdVelTopic>/cmd_vel</cmdVelTopic> <!-- Thêm topic điều khiển -->
+    <odometryTopic>/odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <publishTf>true</publishTf> <!-- Xuất TF từ plugin -->
+    <publishWheelTF>false</publishWheelTF> <!-- Không xuất TF của bánh xe -->
+    <publishWheelJointState>true</publishWheelJointState> <!-- Xuất trạng thái joint -->
+    <wheelAcceleration>5.0</wheelAcceleration> <!-- Tăng tốc tối đa của bánh xe -->
+    <wheelTorque>10.0</wheelTorque> <!-- Mô-men xoắn bánh xe -->
+    <odometrySource>encoder</odometrySource> <!-- 1 = dùng encoder, 0 = dùng Ground Truth -->
+  </plugin>
+</gazebo>
+<gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so" />
+</gazebo>
+<transmission name="link1_rot_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="link1_rot">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="link1_rot_motor">
+    <mechanicalReduction>1.0</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="link2_pris_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="link2_pris">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="link2_pris_motor">
+    <mechanicalReduction>1.0</mechanicalReduction>
+  </actuator>
+</transmission>
+</robot>
