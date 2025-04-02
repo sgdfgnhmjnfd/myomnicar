@@ -5,4 +5,13 @@ control_msgs
 trajectory_msgs
 actionlib
 robot_localization
+numpy
+matplotlib
+opencv-python
+transformations
+pyyaml
+scipy
+
+//Clone PKG xe điều khiển này về:
 git clone https://github.com/duynamrcv/omni_robot
+
