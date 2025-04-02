@@ -12,8 +12,8 @@ Dự án **MyOmniCar** là một hệ thống mô phỏng robot omni 4 bánh tí
 
 ## HƯớng dẫn chạy dự án
 **Step1:** git repo
-git clone https://github.com/sgdfgnhmjnfd/my_omni_c
-cd my_omni_c
+git clone https://github.com/sgdfgnhmjnfd/myomnicar
+cd myomnicar
 
 **Step2:** Chạy mô phỏng
 roslaunch myomnicar display.launch
