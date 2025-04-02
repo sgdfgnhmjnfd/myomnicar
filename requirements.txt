@@ -5,3 +5,4 @@ control_msgs
 trajectory_msgs
 actionlib
 robot_localization
+git clone https://github.com/duynamrcv/omni_robot
