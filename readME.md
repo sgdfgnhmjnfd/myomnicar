@@ -12,19 +12,27 @@ Dự án **MyOmniCar** là một hệ thống mô phỏng robot omni 4 bánh tí
 
 ## HƯớng dẫn chạy dự án
 **Step1:** git repo
+
 git clone https://github.com/sgdfgnhmjnfd/myomnicar
+
 cd myomnicar
 
 **Step2:** Chạy mô phỏng
+
 roslaunch myomnicar display.launch
 
 **Step3:** Mở file config thủ công ( của em bị lỗi ko hiển thị file config từ trước )
+
 **Vào RViz-> Open-> Myomnicar -> config -> config_sensors.rviz**
 
 **Step4:** Khởi chạy node điều khiển
+
 roscore
+
 rosrun myomnicar omni_keyboard_control.py
+
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py 
+
 rosrun myomnicar arm_controller.py
 
 **Step5:** Điều khiển tại 2 node điều khiển xe và tay máy
